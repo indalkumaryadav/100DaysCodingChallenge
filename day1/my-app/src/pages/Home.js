@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HookForm from "../component/HookForm";
 
 export default class Home extends Component {
   state = {
@@ -24,6 +25,8 @@ export default class Home extends Component {
             Name:- {user.name} Password:- {user.password}
           </h1>
         ))}
+
+        <HookForm />
       </div>
     );
   }
