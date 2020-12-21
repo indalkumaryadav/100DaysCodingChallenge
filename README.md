@@ -1,2 +1,5 @@
 # 100DaysCodingChallenge
-<li>Day 1</li>
+Markup : <details>
+           <summary>Title 1</summary>
+           <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
+         </details>
