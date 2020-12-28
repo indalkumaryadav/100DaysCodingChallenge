@@ -7,3 +7,4 @@ class Book(models.Model):
     author=models.CharField(max_length=255)
     price=models.IntegerField()
     rating=models.FloatField()
+    book_img=models.ImageField(upload_to="books")
