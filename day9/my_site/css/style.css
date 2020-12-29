@@ -1,0 +1,9 @@
+html,
+body {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+}
