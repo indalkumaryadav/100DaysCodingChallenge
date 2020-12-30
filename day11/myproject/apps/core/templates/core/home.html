@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %} Home{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<h1>Hello World.</h1>
+<h1>Hello World.</h1>
+<button id="indal">Click Me</button/>
+
+<a href="{% url 'login' %}">Login</a>
+{% endblock content %}
+
+{% block js %}
+
+<script src="{% static 'core/js/main.js' %}"></script>
+{% endblock js %}

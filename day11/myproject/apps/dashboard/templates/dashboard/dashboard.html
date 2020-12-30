@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}login{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="container">
+<h1 class="dashboard">User Dashboard</h1>
+
+<div class="card">
+
+    <h3>Card </h3>
+</div>
+
+<button id="indal">Click Login</button>
+    
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'dashboard/js/main.js' %}"></script>
+{% endblock js %}
