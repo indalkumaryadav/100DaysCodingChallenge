@@ -1,0 +1,5 @@
+.header:hover{
+    color: red;
+    cursor: pointer;
+    font-size: 35px;
+}
