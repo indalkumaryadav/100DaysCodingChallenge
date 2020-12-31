@@ -1,0 +1,16 @@
+{% extends 'core/home.html' %}
+{% load static %}
+{% block title %}dashboard{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<h1>dashboard</h1>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'dashboard/js/main.js' %}"></script>
+{% endblock js %}

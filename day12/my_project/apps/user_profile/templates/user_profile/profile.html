@@ -1,0 +1,16 @@
+{% extends 'core/home.html' %}
+{% load static %}
+{% block title %}user profile{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'user_profile/css/style.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<h1>user_profilepage</h1>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'user_profile/js/main.js' %}"></script>
+{% endblock js %}
