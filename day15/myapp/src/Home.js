@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Slider from "react-slick";
+import Header from "./Header";
 // import "~slick-carousel/slick/slick.css";
 // import "~slick-carousel/slick/slick-theme.css";
 import { Container, Card, CardBody, Col, Row, CardHeader } from "reactstrap";
@@ -9,12 +10,13 @@ export default class Home extends Component {
     const settings = {
       dots: false,
       infinite: false,
-      speed: 500,
+      speed: 1000,
       slidesToShow: 3,
       slidesToScroll: 2,
     };
     return (
       <Container>
+        <Header />
         <div className="clearfix">
           <h4 className="float-left">Container</h4>
           <a href="#" className="float-right">
