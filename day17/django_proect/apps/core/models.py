@@ -9,3 +9,4 @@ class Post(models.Model):
     title=models.CharField(max_length=100)
     content = HTMLField()
     description=RichTextField()
+    image=models.ImageField(upload_to="posts/",blank=True,null=True)

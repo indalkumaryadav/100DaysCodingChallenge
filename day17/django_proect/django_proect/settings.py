@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework",
     'tinymce',
     'ckeditor',
+    'corsheaders',
 
 # local apps
     "apps.core",
@@ -50,8 +51,9 @@ INSTALLED_APPS = [
     "apps.carts",
     "apps.products",
 ]
-
+CORS_ALLOW_ALL_ORIGINS=True
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

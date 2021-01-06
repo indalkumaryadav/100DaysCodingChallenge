@@ -1,0 +1,53 @@
+body {
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header nav {
+  height: 100px;
+  width: 100%;
+  position: sticky;
+  top: 50px;
+  background-color: salmon;
+}
+header nav li {
+  display: inline-block;
+}
+header nav li a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: red;
+  color: white;
+}
+header nav ul li a:hover {
+  background-color: green;
+  color: peru;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  height: 1500px;
+  border: 1px solid black;
+}
+#indal {
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+}
+#div2 {
+  display: inline-block;
+  height: 200px;
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  width: 200px;
+  border: 2px solid red;
+}
+.div3 {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  border: 2px solid red;
+}
