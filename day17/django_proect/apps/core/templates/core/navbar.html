@@ -1,0 +1,19 @@
+{% load static %}
+<!-- custom css -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/css/navbar.css' %}" />
+
+{% endblock css %}
+<nav>
+  <ul>
+    <li><a id="indal" href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Bussiness</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
+    <li><a href="{% url 'products' %}">Prodcuts</a></li>
+    <li><a href="{% url 'user_profile' %}">Profile</a></li>
+    <li><a href="{% url 'dashboard' %}">dashboard</a></li>
+    <li><a href="{% url 'cart' %}">Carts</a></li>
+  </ul>
+</nav>

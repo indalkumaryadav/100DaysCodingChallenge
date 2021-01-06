@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %} {% load static %}
+<!-- title -->
+{% block title %} Home {% endblock title %}
+<!-- Custom css -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
+{% endblock css %}
+<!-- Content -->
+{% block content %}
+<h1>Hello Home Page</h1>
+<button id="LoginBtn">Click Here</button>
+
+{{form}}
+
+<section class="main_section"></section>
+
+{% endblock content %}
+
+<!-- Custom JS -->
+
+{% block js %}
+
+<script src="{% static 'core/js/main.js' %}"></script>
+
+{% endblock js %}

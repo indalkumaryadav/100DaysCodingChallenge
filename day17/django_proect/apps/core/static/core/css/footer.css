@@ -1,0 +1,22 @@
+footer {
+  width: 100%;
+  height: 400px;
+  background-image: url("/static/core/img/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 5px solid white;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.col_1 {
+  background-color: violet;
+}
+
+.col_2 {
+  background-color: indianred;
+}
+
+.col_3 {
+  background-color: teal;
+}

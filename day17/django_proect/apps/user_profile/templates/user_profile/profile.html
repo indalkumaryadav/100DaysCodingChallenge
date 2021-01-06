@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %} {% load static %}
+<!-- title -->
+{% block title %} Profile {% endblock title %}
+<!-- Custom css -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'user_profile/css/style.css' %}" />
+{% endblock css %}
+<!-- Content -->
+{% block content %}
+<h1>Hello user_profile Page</h1>
+<button id="LoginBtn">Click Here</button>
+
+<section class="main_section">
+  <h2>Hello World.</h2>
+</section>
+
+{% endblock content %}
+
+<!-- Custom JS -->
+
+{% block js %}
+
+<script src="{% static 'user_profile/js/main.js' %}"></script>
+
+{% endblock js %}

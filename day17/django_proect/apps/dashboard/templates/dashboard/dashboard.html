@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %} {% load static %}
+<!-- title -->
+{% block title %} dashboard {% endblock title %}
+<!-- Custom css -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}" />
+{% endblock css %}
+<!-- Content -->
+{% block content %}
+<h1>Hello dashboard Page</h1>
+<button id="LoginBtn">Click Here</button>
+
+<section class="main_section"></section>
+
+{% endblock content %}
+
+<!-- Custom JS -->
+
+{% block js %}
+
+<script src="{% static 'dashboard/js/main.js' %}"></script>
+
+{% endblock js %}
