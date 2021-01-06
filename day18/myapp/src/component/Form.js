@@ -35,7 +35,6 @@ const Form = () => {
               name="image"
               ref={register({ required: "indal required" })}
             />
-            <button type="submit">Submit</button>
           </form>
         </Box>
       </Paper>

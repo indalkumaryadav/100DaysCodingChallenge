@@ -4,6 +4,8 @@ import Carousel from "react-elastic-carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Card, Button } from "react-bootstrap";
 import Form from "./component/Form";
+import Header from "./component/Header";
+import Footer from "./component/Footer";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -28,6 +30,7 @@ function App() {
 
   return (
     <Container>
+      <Header />
       {/* <Container>
         <h3 style={{ display: "inline" }}>User List</h3>
         <a style={{ float: "right", marginTop: 5 }} href="#">
@@ -59,6 +62,7 @@ function App() {
       </Carousel> */}
 
       <Form />
+      <Footer />
     </Container>
   );
 }
