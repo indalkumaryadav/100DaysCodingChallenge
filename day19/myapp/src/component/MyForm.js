@@ -4,18 +4,12 @@ const MyForm = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState();
 
-  const handleChange1 = (event) => {
-    console.log(event.target.value);
-  };
-
-  const handleChange2 = (event) => {
-    console.log(event.target.file[0].name);
-  };
-
   const newBook = () => {
     const uploadData = new FormData();
     uploadData.append("title", title);
     uploadData.append("image", image, image.name);
+
+    console.log(uploadData);
 
     fetch("http://127.0.0.1:8000/api/posts/", {
       method: "POST",

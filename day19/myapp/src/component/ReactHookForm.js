@@ -16,8 +16,11 @@ const ReactHookForm = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data.title);
     console.log(data);
-    // postImg(data);
+    const uploadData = new FormData();
+    // uploadData.append("title", data.title);
+    // uploadData.append("image", data.file);
   };
 
   const getAPI = () => {
@@ -30,9 +33,14 @@ const ReactHookForm = () => {
       .catch((error) => console.log(error));
   };
   const postImg = (data) => {
-    axios.post("http://127.0.0.1:8000/api/posts/", data).then((response) => {
-      console.log(response);
-    });
+    axios
+      .post("http://127.0.0.1:8000/api/posts/", {
+        title: data.title,
+        image: data.files[0],
+      })
+      .then((response) => {
+        console.log(response);
+      });
   };
   useEffect(() => {
     getAPI();
