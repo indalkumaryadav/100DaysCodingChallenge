@@ -10,9 +10,7 @@ import {
 
 const SignUpForm = () => {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const onSubmit = (data) => {};
   return (
     <Container>
       <form onSubmit={handleSubmit(onSubmit)}>

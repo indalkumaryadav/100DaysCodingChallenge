@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="./upload" enctype="multipart/form-data">
+      <input type="file" id="indal" />
+      <br />
+      <button>Submit</button>
+      <br />
+    </form>
+
+    <script>
+      const input = document.getElementById("indal");
+
+      input.addEventListener("change", () => {
+        console.log(input.files[0]);
+      });
+      const formData = new FormData();
+      formData.append("name", "indal");
+      formData.append("age", 24);
+      formData.append("image", "imagehidstigalhifile.jfpo");
+      formData.append("create_at", Date.now());
+      console.log(Array.from(formData));
+      for (const fd of formData) {
+        console.log(fd);
+      }
+    </script>
+  </body>
+</html>
