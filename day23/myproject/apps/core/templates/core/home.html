@@ -1,0 +1,241 @@
+{% extends 'core/base.html' %}{% load crispy_forms_tags %}
+<!-- title -->
+{% block title %} Home {% endblock title %}
+<!-- CSS -->
+{% block css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+  integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+  crossorigin="anonymous"
+/>
+<style>
+  body {
+    background-color: gray;
+  }
+  .form-control:focus {
+    box-shadow: none;
+  }
+  .slick-next::before,
+  .slick-prev::before {
+    font-size: 40px;
+    margin: 1px;
+  }
+</style>
+{% endblock css %}
+<!-- Content -->
+{% block content %}
+<div class="container">
+  <div class="indal">
+    <h3 style="display: inline">Popular</h3>
+    <a href="" style="float: right">View More</a>
+  </div>
+  <div class="row responsive p-4">
+    <!--first card -->
+    <div class="col-3 text-center m-1">
+      <div class="card shadow-md">
+        <div class="card-header">
+          <h2>First Card</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt
+            eos et, ex ducimus, aliquid voluptas eveniet dignissimos delectus
+            minima quos possimus repellendus, sequi illo facere tempora quasi!
+            Possimus, cum.
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-danger">CLick to get Information</button>
+        </div>
+      </div>
+    </div>
+    <!--first card -->
+    <div class="col-3 text-center">
+      <div class="card shadow-md">
+        <div class="card-header">
+          <h2>First Card</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt
+            eos et, ex ducimus, aliquid voluptas eveniet dignissimos delectus
+            minima quos possimus repellendus, sequi illo facere tempora quasi!
+            Possimus, cum.
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-danger">CLick to get Information</button>
+        </div>
+      </div>
+    </div>
+
+    <!--first card -->
+    <div class="col-3 text-center">
+      <div class="card shadow-md">
+        <div class="card-header">
+          <h2>First Card</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt
+            eos et, ex ducimus, aliquid voluptas eveniet dignissimos delectus
+            minima quos possimus repellendus, sequi illo facere tempora quasi!
+            Possimus, cum.
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-danger">CLick to get Information</button>
+        </div>
+      </div>
+    </div>
+    <!--first card -->
+    <div class="col-3 text-center">
+      <div class="card shadow-md">
+        <div class="card-header">
+          <h2>First Card</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt
+            eos et, ex ducimus, aliquid voluptas eveniet dignissimos delectus
+            minima quos possimus repellendus, sequi illo facere tempora quasi!
+            Possimus, cum.
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-danger">CLick to get Information</button>
+        </div>
+      </div>
+    </div>
+    <!--first card -->
+    <div class="col-3 text-center">
+      <div class="card shadow-md">
+        <div class="card-header">
+          <h2>First Card</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt
+            eos et, ex ducimus, aliquid voluptas eveniet dignissimos delectus
+            minima quos possimus repellendus, sequi illo facere tempora quasi!
+            Possimus, cum.
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-danger">CLick to get Information</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Home Page</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-4 mx-auto">
+      <form action="" method="POST">
+        {% csrf_token %} {{ form|crispy }}
+        <button type="submit" class="btn btn-primary my-4">Post</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="POST">
+            {% csrf_token %} {{ form|crispy }}
+            <button type="submit" class="btn btn-primary my-4">Post</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+<!-- javascript -->
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+  type="text/javascript"
+  src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+  function myFun() {
+    Swal.fire("Good job!", "You clicked the button!", "success");
+  }
+
+  $(".responsive").slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  });
+</script>
+
+{% endblock js %}
