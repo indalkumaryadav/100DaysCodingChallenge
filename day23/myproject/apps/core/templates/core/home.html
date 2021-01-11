@@ -139,7 +139,7 @@
 <div class="container">
   <div class="row">
     <div class="col-4 mx-auto">
-      <form action="" method="POST">
+      <form id="postForm" action="" method="POST" novalidate>
         {% csrf_token %} {{ form|crispy }}
         <button type="submit" class="btn btn-primary my-4">Post</button>
       </form>
@@ -236,6 +236,9 @@
       // instead of a settings object
     ],
   });
+  const form = document.getElementById("postForm");
+
+  form.addEventListener("submit", (e) => {});
 </script>
 
 {% endblock js %}
