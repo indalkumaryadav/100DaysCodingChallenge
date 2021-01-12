@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+<!--  -->
+{% block content %}
+<div class="container" id="container">
+  <div class="row">
+    <div class="col-4">
+      <form action="" id="post_form" method="POST">
+        {% csrf_token %} {{form.as_p}}
+        <button>Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+<!--  -->
+{% block js %}
+
+<script>
+  const indal = document.getElementById("container");
+  indal.innerHTML += `
+     <button>Indal Kumar</button>
+     `;
+  const title = document.getElementById("id_title");
+  const content = document.getElementById("id_content");
+  const csrf = document.getElementsByName("csrfmiddleware");
+
+  const post_form = document.getElementById("post_form");
+  post_form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("title", title.value);
+    formData.append("content", content.value);
+    formData.append("csrf", csrf.values[0]);
+    postData(formData);
+    formData.reset();
+  });
+
+  const postData = (formData) => {
+    fetch("127.0.0.1:8000/post/", {
+      headers: {},
+      method= POST,
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+</script>
+
+{% endblock js %}

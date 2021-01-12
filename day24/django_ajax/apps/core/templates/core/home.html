@@ -5,6 +5,14 @@
 
 {% block content %}
 
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <form action="" onsubmit=""></form>
+    </div>
+  </div>
+</div>
+
 <h1>Ajax Form</h1>
 <h1>Ajax Form</h1>
 <div class="container">
@@ -41,6 +49,12 @@
 
   console.log(upload_form);
   console.log(csrf);
+
+  const formDataIndal = new FormData();
+  formDataIndal.append("indal", "hello there");
+  formDataIndal.append("indal", "hello there kumar sin");
+  formDataIndal.append("indal", "hello there kumartki aihn a");
+  formDataIndal.forEach((ew, e) => {});
 </script>
 
 {% endblock js %}
