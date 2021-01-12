@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+<!-- css -->
+{% block css %} {% endblock css %}
+<!-- content -->
+
+{% block content %}
+
+<h1>Ajax Form</h1>
+<h1>Ajax Form</h1>
+<div class="container">
+  <div id="imageBox"></div>
+  <form action="" id="form">
+    {% csrf_token %} {{form.as_p}}
+    <button type="submit">Upload</button>
+  </form>
+</div>
+{% endblock content %}
+
+<!-- js -->
+
+{% block js %}
+
+<script>
+  const upload_form = document.getElementById("form");
+  const input = document.getElementById("id_img");
+  const imageBox = document.getElementById("imageBox");
+  const csrf = document.getElementsByName("csrfmiddlewaretoken");
+  const img = document.createElement("img");
+
+  imageBox.appendChild(img);
+
+  input.addEventListener("change", () => {
+    const img_data = input.files[0];
+    console.log(img_data);
+    const fd = new FormData();
+    fd.append("csrf", csrf[0].value);
+    fd.append("img", img_data);
+  });
+
+  console.log(img);
+
+  console.log(upload_form);
+  console.log(csrf);
+</script>
+
+{% endblock js %}

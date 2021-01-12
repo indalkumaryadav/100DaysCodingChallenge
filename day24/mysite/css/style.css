@@ -1,0 +1,10 @@
+@font-face {
+  src: url(assets/fonts/PottaOne-Regular.ttf);
+  font-family: myFirstFont;
+}
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
+
+p {
+  font-family: myFirstFont;
+  font-size: 50px;
+}
