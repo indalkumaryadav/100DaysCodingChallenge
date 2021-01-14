@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+<!-- CSS -->
+{% block css %}
+
+<style></style>
+
+{% endblock css %}
+
+<!-- content -->
+
+{% block content %}
+<h1>Home Pages</h1>
+<div class="get_data">
+  <h1>All Post Details List</h1>
+  {% for dataList in data %}
+  <h3>{{dataList.title}}</h3>
+  {% endfor %}
+</div>
+
+{% endblock content %}
+<!-- content -->
+
+{% block js %}
+<script></script>
+{% endblock js %}
