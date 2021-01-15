@@ -25,7 +25,7 @@ SECRET_KEY = '7_7))lzv9^iz-*2zao!b^jznhf!(fpt*ga7iznj6-lh=da=o!#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.43.118']
 
 
 # Application definition
@@ -37,9 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'api',
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -113,8 +126,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+CORS_ALLOW_ALL_ORIGINS=True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS=[
+    BASE_DIR / "static"
+]
+MEDIA_URL="/media/"
+MEDIA_ROOT=BASE_DIR / "media"
