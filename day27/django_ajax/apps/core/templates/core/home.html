@@ -1,0 +1,131 @@
+{% extends 'core/base.html' %}{% load crispy_forms_tags %} {% block css %}
+
+<style></style>
+
+{% endblock css %}
+
+<!-- content -->
+
+{% block content %}
+<div class="contianer">
+  <div class="row">
+    <h3>All Data of Person</h3>
+    {% for persons in person %} {{persons.name|safe}} {% endfor %}
+    <div class="col-5 mx-auto">
+      <h1>MyFOrm</h1>
+      <form method="POST">
+        {% csrf_token %} {{myform}}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          <h3>Register Form</h3>
+        </div>
+        <div class="card-body">
+          <form
+            method="POST"
+            enctype="multipart/form-data"
+            id="myForm"
+            novalidate
+          >
+            <div id="img_show"></div>
+            {% csrf_token %} {{form|crispy}} {{form.media}}
+            <div class="d-grid gap-2 col-6 mx-auto my-4">
+              <button type="submit" class="btn btn-danger">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 mx-auto my-4">
+      <table class="table table-hover" id="tbody">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for datalist in data %}
+          <tr>
+            <td>{{datalist.id}}</td>
+            <td>{{datalist.title}}</td>
+            <td>{{datalist.description}}</td>
+            <td>
+              <img src="{{datalist.image.url}}" alt="" width="80" height="80" />
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+<!-- content -->
+
+{% block js %}
+<script>
+  const form = document.getElementById("myForm");
+  const title = document.getElementById("id_title");
+  const description = document.getElementById("id_description");
+  const image = document.getElementById("id_image");
+  const csrf = document.getElementsByName("csrfmiddlewaretoken");
+  const img_show = document.getElementById("img_show");
+  image.classList.add("form-control");
+
+  const formLabel = document.querySelector(".requiredField");
+  formLabel.classList.add("form-label");
+
+  image.addEventListener("change", () => {
+    const img_data = image.files[0];
+    const url = URL.createObjectURL(img_data);
+    img_show.innerHTML = `<img src="${url}" width="100%" height="250">`;
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("csrfmiddlewaretoken", csrf[0].value);
+    formData.append("title", title.value);
+    formData.append("description", description.value);
+    formData.append("image", image.files[0]);
+    const media_url = window.location.href;
+    output = "";
+    $.ajax({
+      type: "POST",
+      url: '{%url "home" %}',
+      data: formData,
+      success: (response) => {
+        var instance = JSON.parse(response["instance"]);
+        var fields = instance[0]["fields"];
+        console.log(instance);
+        $("#tbody").append(
+          `<tr>
+                    <td>${instance[0].pk}</td>
+                    <td>${fields["title"]}</td>
+                    <td>${fields["description"]}</td>
+                    <td><img src="media/${fields["image"]}" width="80" height="80"></td>
+                    </tr>`
+        );
+      },
+      error: (error) => {
+        console.log(error);
+      },
+      cache: false,
+      contentType: false,
+      processData: false,
+    });
+  });
+</script>
+{% endblock js %}
