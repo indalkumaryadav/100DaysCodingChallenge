@@ -6,6 +6,19 @@
     <title>Document</title>
   </head>
   <body>
-    {% block content %} {% endblock content %}
+    <div class="div"></div>
+    <input type="file" onchange="readFile(this)" />
+    <div id="indal"></div>
+
+    <script>
+      function readFile(input) {
+        let file = input.files[0];
+        let reader = new FileReader();
+        reader.onload = function () {
+          console.log(reader);
+        };
+        reader.readAsDataURL(file);
+      }
+    </script>
   </body>
 </html>
