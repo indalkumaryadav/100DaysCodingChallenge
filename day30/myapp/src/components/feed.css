@@ -1,0 +1,13 @@
+.feed {
+  overflow-y: scroll;
+  min-width: 600px;
+}
+.feed::-webkit-scrollbar {
+  display: none;
+}
+.feed_header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+}
