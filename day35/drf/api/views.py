@@ -9,6 +9,5 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.generics import CreateAPIView
 
 
-class PostViewSet(viewsets.ModelViewSet):
-    serializer_class=PostSerializer
-    queryset=Post.objects.all()
+class PostViewSet():
+  pass
