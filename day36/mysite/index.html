@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      nav {
+        margin: 0 auto;
+        width: 80%;
+        height: 80px;
+      }
+      nav > ul {
+        display: flex;
+        list-style: none;
+      }
+      nav ul li a {
+        padding: 10px;
+        font-size: 30px;
+        text-decoration: none;
+      }
+
+      nav > ul > li > ul {
+        display: none;
+      }
+      nav > ul > li:hover ul {
+        display: block;
+
+        margin: 0;
+        padding: 0;
+        left: 0;
+        list-style: none;
+      }
+      nav > ul > li > ul > li {
+        margin: 10px;
+        border: 2px solid rgb(245, 22, 22);
+        padding: 10px;
+      }
+      nav > ul > li > ul > li:hover {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Home</a>
+          <ul class="submenu">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Home</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
