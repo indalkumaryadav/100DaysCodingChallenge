@@ -61,10 +61,12 @@ class EmployeeCRUD(View):
 
     def post(self,request):
         emp=request.body
+        print(emp)
 
         json_to_dict=json.loads(emp)
+        print(json_to_dict)
 
-        emp_form=CreateEmployeeForm(json_to_dict)
+        emp_form=CreateEmployeeForm(json_to_dict,request.FILES)
 
         if emp_form.is_valid():
             emp_form.save()
@@ -117,12 +119,3 @@ class EmployeeCRUD(View):
                 emp.delete()
                 return HttpResponse(json.dumps({'msg':'successfully Deleted!'}),content_type="application/json",status=200)
         return HttpResponse(json.dumps({'msg':'To perform Deletion id is must be provied'}),status=404)
-
-
-        
-                    
-    
-            
-        
-        
-        

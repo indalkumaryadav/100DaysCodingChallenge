@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="file" name="image" id="image" />
+    </form>
+    <script>
+      const image = document.getElementById("image");
+      image.addEventListener("change", (event) => {
+        image_data = event.target.files[0];
+        let formData = new FormData();
+        formData.append("name", "indal");
+        formData.append("age", 21);
+        formData.append("salery", 21000);
+        formData.append("image", image_data);
+    </script>
+  </body>
+</html>
