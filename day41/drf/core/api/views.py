@@ -75,5 +75,6 @@ class EmployeeListMixin(mixins.UpdateModelMixin,mixins.DestroyModelMixin,mixins.
     
     def put(self,request,*args,**kwargs):
         return self.update(self,request,*args,**kwargs)
+        
     def patch(self,request,*args,**kwargs):
         return self.partial_update(self,request,*args,**kwargs)
