@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    "payments"
+    "payments",
+    "core",
 ]
 
 MIDDLEWARE = [
@@ -122,9 +123,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-
 STRIPE_SECRET_KEY="sk_test_51IFxoFKcF6RE35QEvWuimmlzUKXh5E3t2xy58tHRWbuAlS11KndOKak6b6XpzbsLG8UwkK4Ytua4A1m1uiA6M0p400WOLZM5WP"
 
 
