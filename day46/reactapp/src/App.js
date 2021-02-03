@@ -1,13 +1,13 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import TakeMoney from "./TakeMoney";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js/pure";
+import CheckoutForm from "./CheckoutForm";
 
-function App() {
-  return (
-    <div className="App">
-      <TakeMoney />
-    </div>
-  );
-}
-
+const stripePromise = loadStripe("pk_test_");
+const App = () => (
+  <Elements stripe={stripePromise}>
+    <CheckoutForm />
+  </Elements>
+);
 export default App;
