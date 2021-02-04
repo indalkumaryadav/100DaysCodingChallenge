@@ -11,6 +11,7 @@ class UserRegistrationForm(forms.Form):
     message=forms.CharField(widget=forms.Textarea,validators=[
         validators.MinLengthValidator(10)
     ])
+    bot_handler=forms.CharField(widget=forms.HiddenInput)
     def clean(self):
         cleaned_data = super().clean()
         iname = cleaned_data["name"]

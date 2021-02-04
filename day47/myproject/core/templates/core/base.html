@@ -6,7 +6,9 @@
     <title>Document</title>
   </head>
   <body>
+    {% load filters %}
     <h1>Hello World</h1>
+    {{data|truncate5}}
     <form method="POST" novalidate>
       {% csrf_token %} {{form.as_p}}
       <button type="submit">Submit</button>
