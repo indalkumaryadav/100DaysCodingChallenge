@@ -1,0 +1,52 @@
+{% extends 'blog/base.html' %}
+<!-- static-->
+{% load static %}
+<!-- title -->
+
+{% block title %}Home{% endblock title %}
+
+<!-- CSS -->
+
+{% block css %}
+<style>
+  h1 {
+    font-size: 100px;
+  }
+</style>
+{% endblock css %}
+
+<!-- content -->
+
+{% block content %}
+
+<h1>Hello Home Page</h1>
+<button id="clickButton">Click Here</button>
+
+<div class="container">
+  <div class="row">
+    {% for data in post_list %}
+    <div class="col-sm-3 m-1">
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://via.placeholder.com/100"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <p class="card-text">{{data.title|truncatewords:2|linebreaks}}</p>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-primary">Click here</button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
+
+<!-- JS -->
+
+{% block js %}
+<script src="{% static 'blog/js/main.js' %}"></script>
+{% endblock js %}
