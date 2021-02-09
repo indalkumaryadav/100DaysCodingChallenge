@@ -3,6 +3,7 @@ import razorpay
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import OrderSerializer
+
 @api_view(['POST'])
 def payment_api(request):
     amount = request.data['amount']
