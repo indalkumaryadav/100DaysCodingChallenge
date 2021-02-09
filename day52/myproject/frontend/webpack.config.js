@@ -20,7 +20,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, "static/frontend"),
+    contentBase: path.join(__dirname, "templates/frontend/"),
     compress: true,
     port: 3300,
     open: true,
