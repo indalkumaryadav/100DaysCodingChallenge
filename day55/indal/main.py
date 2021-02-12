@@ -1,0 +1,6 @@
+print(0 and 20)
+print(1 and 20)
+print(4&5)
+print(4^5)
+print(~5)
+print(~True)
