@@ -1,0 +1,95 @@
+import React, { useState } from "react";
+import "./App.css";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+
+function App() {
+  const { register, handleSubmit } = useForm();
+  const [amount, setAmount] = useState("");
+  const handlePaymentSuccess = async (response) => {
+    let bodyData = new FormData();
+    bodyData.append("response", JSON.stringify(response));
+    axios
+      .post("http://127.0.0.1:8000/payment/payment/success/", bodyData)
+      .then((res) => {
+        console.log("Everything is OK!");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const loadScript = () => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    document.body.appendChild(script);
+  };
+
+  const onSubmit = (data) => {
+    const res = loadScript();
+
+    const formdata = new FormData();
+    formdata.append("name", data.name);
+    formdata.append("amount", data.amount);
+
+    axios
+      .post("http://127.0.0.1:8000/payment/pay/", formdata)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    var options = {
+      key_id: process.env.REACT_APP_PUBLIC_KEY, // in react your environment variable must start with REACT_APP_
+      key_secret: process.env.REACT_APP_SECRET_KEY,
+      amount: data.amount,
+      currency: "INR",
+      name: "Org. Name",
+      description: "Test teansaction",
+      image: "", // add image url
+      order_id: data.id,
+      handler: function (response) {
+        // we will handle success by calling handlePaymentSuccess method and
+        // will pass the response that we've got from razorpay
+        handlePaymentSuccess(response);
+      },
+      prefill: {
+        name: "User's name",
+        email: "User's email",
+        contact: "User's phone",
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
+
+  return (
+    <div
+      className="App"
+      style={{
+        marginTop: 100,
+      }}
+    >
+      <form onSubmit={handleSubmit(onSubmit)}>
+        Product name:-
+        <input type="text" name="name" ref={register} />
+        <br />
+        <br />
+        Amount <input type="number" name="amount" ref={register} />
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
