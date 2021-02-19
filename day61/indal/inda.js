@@ -4,9 +4,9 @@ class Teacher {
   }
 }
 
-class Student extends Teacher {
+class Student {
   constructor(a, b, c) {
-    super();
+    // super();
     this.name = a;
     this.age = b;
     this.marks = c;
