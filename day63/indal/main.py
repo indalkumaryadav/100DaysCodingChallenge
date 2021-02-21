@@ -17,3 +17,8 @@ class Test:
 
 # t=Test("Indal kumar",20)
 # e=Employee.modify(t)
+
+
+import gc
+
+print(gc.isenabled())
