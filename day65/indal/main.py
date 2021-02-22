@@ -1,9 +1,21 @@
 class Book:
-    def __init__(self,pages):
-        self.pages=pages
-    
-    def __str__(self):
-        return str(self.pages)
+    def __init__(self):
+        pass
+    def sum(self,*args,**kwargs):
+        sum=0
+        for i in args:
+            sum=sum+i
+        return sum,kwargs
+
+class A:
+    def __init__(self):
+        print("somthing")
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("somthing")
         
-b1=Book(100)
-print(b1)
+from abc import *
+class Test(ABC):
+    pass
