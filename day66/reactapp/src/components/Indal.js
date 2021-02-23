@@ -4,7 +4,8 @@ function Indal() {
   const [increment, setIncrement] = useState(0);
 
   function handleClick() {
-    setIncrement();
+    let inc = increment + 1;
+    setIncrement(inc);
   }
   return (
     <div>

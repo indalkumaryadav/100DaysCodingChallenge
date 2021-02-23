@@ -9,4 +9,8 @@ class Child extends Parent {
     console.log("Child Class");
   }
 }
-c1 = new Child();
+function arrayInsertion(arr, item) {}
+
+const date = new Date();
+console.log(date.getDate());
+console.log(date.getTime());

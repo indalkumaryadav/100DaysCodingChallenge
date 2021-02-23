@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Indal from "./components/Indal";
+import Home from "./pages/Home";
 
 function App() {
+  const [increment, setIncrement] = useState(0);
+
+  function handleClick() {
+    setIncrement(increment + 1);
+  }
+  function decrement() {
+    setIncrement(increment - 1);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{increment}</h1>
+      <button onClick={handleClick}>Click me</button>
+      <button onClick={decrement}>Decrement</button>
+      <Home />
+      <Indal />
     </div>
   );
 }
