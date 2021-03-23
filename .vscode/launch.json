@@ -1,0 +1,80 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "newsApp",
+            "cwd": "day10\\newsApp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutterapp",
+            "cwd": "day11\\flutterapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "androidapp",
+            "cwd": "day12\\androidapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutterapp",
+            "cwd": "day15\\flutterapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "todoApp",
+            "cwd": "day16\\todoApp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutterApp",
+            "cwd": "day18\\flutterApp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "FormDataUploadApp",
+            "cwd": "day20\\FormDataUploadApp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutterapp",
+            "cwd": "day24\\flutterapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutterapp",
+            "cwd": "day85\\flutterapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "myApp",
+            "cwd": "day9\\myApp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutterapp",
+            "cwd": "day90\\flutterapp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutterapp",
+            "cwd": "day94\\flutterapp",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
