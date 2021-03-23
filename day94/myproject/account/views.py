@@ -9,4 +9,8 @@ from rest_framework.response import Response
 class UserAPIView(APIView):
     
     def post(self,request):
-        pass
+        serializers =UserSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response({"message":f"user is created for '{serializers.data['username']}' ","data":serializers.data})
+        return Response({"message":"A user with that username already exists! Try Anather Username"})
