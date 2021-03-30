@@ -1,19 +1,29 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getPosts } from "./redux/action";
-
-function App() {
-  const dispatch = useDispatch();
-  const posts = useSelector((state) => state.post.posts);
-  console.log(posts);
-  useEffect(() => {
-    dispatch(getPosts());
-  }, []);
-  return (
-    <div>
-      <h1>Post</h1>
-    </div>
-  );
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "./store/actions/auth";
+class App extends Component {
+  componentDidMount() {
+    this.props.onTryAutoSignUp();
+  }
+  render() {
+    return (
+      <>
+        <h1>indal</h1>
+      </>
+    );
+  }
 }
+mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.token !== null,
+  };
+};
 
-export default App;
+mapDispatchToProps = (state) => {
+  return {
+    onTryAutoSignUp: () => {
+      actions.authCheckState();
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);
